@@ -1,0 +1,1074 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body {
+  font-family: "华文细黑";
+}
+
+.top {
+  /* flex: 1;   */
+  /* ie不适用flex */
+  height: 10%;
+  width: 100%;
+}
+
+.container {
+  /* flex: 6; */
+  /* height: 60%; */
+  width: 100%;
+  height:80%;
+  padding: 0 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: relative;
+}
+
+.container .con_top {
+  width: 100%;
+  height:20%;
+  text-align: center;
+  font-size: 35px;
+  color: #fff;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.container .con_c {
+  /* flex: 3;
+   */
+  /* height: 390px; */
+  width: 100%;
+  height:60%;
+  position: relative;
+  display:flex;
+  justify-content: space-around;
+}
+
+.container .con_c .con_cc,.container .con_c .con_qr {
+  height: 100%;
+  width: 350px;
+  background: orange;
+  /* margin: 0 auto; */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  display: flex;
+  /* flex-direction: column;
+  justify-content: space-between;
+  align-items: center; */
+  cursor: pointer;
+  position: relative;
+}
+
+.container .con_c .con_cc span,.container .con_c .con_qr span  {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 100px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 78%;
+  left: 113px;
+}
+
+.container .con_t {
+  /* flex: 2; */
+  width: 100%;
+  /* height: 20%; */
+  text-align: center;
+  margin-top:30px;
+}
+
+.container .con_t .con_tL,
+.container .con_t .con_tR span {
+  width: 100%;
+  text-align: left;
+  padding:0 30%;
+}
+
+.bottom {
+  /* flex: 1; */
+  height:10%;
+  width: 100%;
+}
+
+
+/* 插卡弹出层控件 */
+
+.maskInfo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  /* background: url('../image/1.jpg')no-repeat; */
+  z-index: 1000;
+  display: none;
+}
+
+.maskInfo .ms_right {
+  float: right;
+  height: 100%;
+  width: 425px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 100px;
+  position: relative;
+}
+
+.maskInfo .ms_right .cardInfo {
+  /* flex: 1;
+   */
+  height: 20%;
+  width: 100%;
+  line-height: 140px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.maskInfo .ms_right .ms_rightC {
+  /* flex: 3;
+   */
+  height: 60%;
+  width: 100%;
+  background: #fff;
+  position: relative;
+}
+
+.maskInfo .ms_right .ms_rightC img {
+  height: 150px;
+  width: 300px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-top:75px;
+  margin-left:-150px; */
+}
+
+.maskInfo .ms_right .btn {
+  /* flex: 1; */
+  height: 20%;
+  width: 100%;
+  position: relative;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  background: rgb(52, 117, 238);
+  color: #fff;
+  border-radius: 11px;
+  position: absolute;
+  top: 13%;
+  right:60%;
+ 
+  border: none;
+}
+.outCard_on{
+  width: 150px;
+  height: 50px;
+  background: rgb(52, 117, 238);
+  color: #fff;
+  border-radius: 11px;
+  position: absolute;
+  top: 13%;
+  right:6%;
+ 
+  border: none;
+}
+.box {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 324px;
+  left: -99px;
+  border-top: 50px solid transparent;
+  border-right: 50px solid #fff;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid transparent;
+}
+
+
+/* 插卡成功之后获取用户信息控件css */
+
+.user {
+  display: none;
+}
+
+.userInfo {
+  height: 700px;
+  width: 900px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userInfo .userInfo_top {
+  /* flex: 1; */
+  height: 10%;
+  line-height: 67px;
+  /* 兼容ie添加的样式 */
+  width: 100%;
+  font-size: 35px;
+  line-height: 78px;
+  background-color: rgb(32, 151, 234);
+  color: #fff;
+  padding-left: 50px;
+}
+
+.userInfo .userInfo_c {
+  flex: 7;
+  width: 100%;
+}
+
+.userInfo .userInfo_c .userInfo_cc {
+  height: 100%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px 30px 30px;
+  /* ie */
+  margin-bottom: 64px;
+}
+
+.userInfo .userInfo_c .userInfo_cc div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.userInfo .userInfo_c .userInfo_cc div span {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  width: 90px;
+  text-align: right;
+}
+
+.userInfo .userInfo_c .userInfo_cc div input {
+  height: 40px;
+  margin-left: 30px;
+  line-height: 40px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.userInfo .userInfo_bt {
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+
+.userInfo .userInfo_bt button {
+  width: 150px;
+  height: 50px;
+  background: rgb(238, 181, 52);
+  color: #fff;
+  border-radius: 11px;
+  position: absolute;
+  top: 20px;
+  right: 400px;
+}
+
+
+/* ie */
+
+
+/* loading */
+
+.loadEffect {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.loadEffect span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+
+  background: lightgreen;
+  position: absolute;
+  animation: load 1.04s ease infinite;
+  -webkit-animation: load 1.04s ease infinite;
+  -moz-animation: load 1.04s ease infinite;
+
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.loadEffect span:nth-child(1) {
+  left: 0;
+  top: 50%;
+  margin-top: -8px;
+  animation-delay: 0.13s;
+}
+
+.loadEffect span:nth-child(2) {
+  left: 14px;
+  top: 14px;
+  animation-delay: 0.26s;
+}
+
+.loadEffect span:nth-child(3) {
+  left: 50%;
+  top: 0;
+  margin-left: -8px;
+  animation-delay: 0.39s;
+}
+
+.loadEffect span:nth-child(4) {
+  top: 14px;
+  right: 14px;
+  animation-delay: 0.52s;
+}
+
+.loadEffect span:nth-child(5) {
+  right: 0;
+  top: 50%;
+  margin-top: -8px;
+  animation-delay: 0.65s;
+}
+
+.loadEffect span:nth-child(6) {
+  right: 14px;
+  bottom: 14px;
+  animation-delay: 0.78s;
+}
+
+.loadEffect span:nth-child(7) {
+  bottom: 0;
+  left: 50%;
+  margin-left: -8px;
+  animation-delay: 0.91s;
+}
+
+.loadEffect span:nth-child(8) {
+  bottom: 14px;
+  left: 14px;
+  animation-delay: 1.04s;
+}
+
+
+/* 信息列表控件css */
+
+.infoListW {
+  display: none;
+  height: 653px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  background: #e6eaec;
+  z-index: 2000;
+}
+
+.infoList {
+  height: 653px;
+  width: 100%;
+  background: #e6eaec;
+  padding: 20px 40px 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infoList .find {
+  /* flex: 1; */
+  /* ie */
+  height: 10%;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-bottom: 20px;
+  background: #e5f5f5;
+  position: relative;
+}
+
+.infoList .find .title {
+  /* flex: 1; */
+  width: 25%;
+  line-height: 63px;
+  text-align: center;
+  font-size: 27px;
+  /* height: 100%; */
+}
+
+.infoList .find .int {
+  /* flex: 1.5; */
+  height: 100%;
+  width:53%;
+  /* display:inline-block; */
+  float:left;
+}
+
+.infoList .find .int input {
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  /* margin-top: 3px; */
+  border-radius: 10px;
+  /* margin-top: 100px; */
+  border: none;
+  padding: 0 10px 0 10px;
+  display:inline-block;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 20px;
+}
+
+.infoList .find .btn {
+  /* flex: 1; */
+  width:22%;
+  height: 100%;
+}
+
+.infoList .find .btn .caXun {
+  width: 150px;
+  height: 50px;
+  background: rgb(52, 117, 238);
+  color: #fff;
+  border-radius: 11px;
+  border: none;
+  line-height: 50px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 6%;
+  left:80%;
+  behavior: url('PIE/PIE/PIE.htc'); 
+}
+
+.infoList .find input {
+  height: 60px;
+  width: 200px;
+}
+
+.infoList .infoList_top {
+  /* flex: 1; */
+  height: 10%;
+  width: 100%;
+}
+
+.infoList .infoList_top ul {
+  height: 67px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(238, 181, 52);
+}
+
+.infoList .infoList_top ul li {
+  height: 67px;
+  /* flex: 1; */
+  /* ie */
+  width: 16.6%;
+  float: left;
+  line-height: 67px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  border-right: 1px solid #fff;
+}
+
+.infoList .infoList_c {
+  /* flex: 6; */
+  height: 70%;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.infoList .infoList_c .item {
+  width: 100%;
+  /* height: 67px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoList .infoList_c .item div {
+  /* flex: 1; */
+  /* ie */
+  width: 16.6%;
+  float: left;
+  height: 67px;
+  text-align: center;
+  line-height: 67px;
+  overflow: hidden;
+   white-space: nowrap;
+    text-overflow: ellipsis 
+}
+
+.infoList .infoList_c .item div .print {
+  height: 90%;
+  width: 100%;
+  border: 1px solid #e6eaec;
+  display: inline-block;
+  background: #5e5f5f;
+  color: white;
+  line-height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 3px;
+  position: relative;
+  behavior:url('PIE/PIE/PIE.htc');
+}
+
+.infoList .infoList_b {
+  /* flex: 1;
+   */
+  height: 10%;
+  width: 100%;
+  position: relative;
+  margin-top:20px;
+}
+
+.infoList .infoList_b .page {
+  height: 52px;
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  margin-top:-26px;
+  margin-left:-160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.infoList .infoList_b .page .prev {
+  width: 80px;
+  height: 36px;
+  background: rgb(52, 117, 238);
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+}
+.infoList .infoList_b .outCard{
+  width: 16.5%;
+  height: 45px;
+  background: rgb(52, 117, 238);
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+  position: absolute;
+  top:1%;
+  left:83.5%;
+}
+.infoList .infoList_b .page ul {
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  margin: 0 10px 0 10px;
+  /* position: absolute;
+  top: 0;
+  left: 83px; */
+}
+
+#pageNav a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #3a87ad;
+  text-decoration: none;
+  margin: 0 5px;
+  position: absolute;
+  top: 0;
+  right: 24px;
+  cursor: pointer;
+}
+
+#pageNav a.active,
+#pageNav a:hover {
+  background: #3a87ad;
+  color: #EFEFEF;
+}
+
+.infoList .infoList_b .page .next {
+  width: 80px;
+  height: 36px;
+  background: rgb(52, 117, 238);
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+
+/* ip提示 */
+
+.maskT {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(85, 83, 83, 0.925);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0.5;
+  z-index: 1000;
+}
+
+
+/* .el-message-box {
+  display: inline-block;
+  width: 420px;
+  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  font-size: 18px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  text-align: left;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+} */
+
+.el-message-box {
+  display: inline-block;
+  width: 420px;
+  height: 230px;
+  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  font-size: 18px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  text-align: left;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1000;
+}
+
+.el-message-box__header {
+  position: relative;
+  padding: 15px 15px 10px;
+}
+
+.el-message-box__title {
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 1;
+  color: #303133;
+}
+
+.el-message-box__content {
+  position: relative;
+  padding: 10px 15px;
+  color: #606266;
+  font-size: 14px;
+}
+
+.el-message-box__message {
+  margin: 0;
+}
+
+.el-message-box__message p {
+  margin: 0;
+  line-height: 24px;
+}
+
+.el-message-box__input {
+  padding-top: 15px;
+}
+
+.el-input {
+  position: relative;
+  font-size: 14px;
+  display: inline-block;
+  width: 100%;
+}
+
+.el-input__inner {
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0 15px;
+  transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+  width: 100%;
+}
+
+.el-message-box__errormsg {
+  color: #f56c6c;
+  font-size: 12px;
+  min-height: 18px;
+  margin-top: 2px;
+}
+
+.el-message-box__btns {
+  padding: 5px 15px 0;
+  text-align: right;
+  height: 50px;
+}
+
+.el-button--small {
+  padding: 9px 15px;
+  width: 100px;
+  height: 43px;
+  background: rgb(52, 117, 238);
+  color: #fff;
+  border-radius: 11px;
+  position: absolute;
+  top: 163px;
+  right: 20px;
+  border: none;
+}
+
+.el-button--primary {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+
+
+/* css hack */
+
+html[data-useragent*='MSIE 10.0'] .userInfo .userInfo_c .userInfo_cc div {
+  width: 100%;
+  align-items: center;
+  margin-bottom: 60px;
+}
+html[data-useragent*='MSIE 10.0'] .infoList .infoList_c{
+  height:67%;
+}
+
+/* ie 9  */
+
+html[data-useragent*='MSIE 9.0'] .userInfo .userInfo_c .userInfo_cc div {
+  width: 100%;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+html[data-useragent*='MSIE 9.0'] .userInfo .userInfo_bt button {
+  width: 150px;
+  height: 50px;
+  background: rgb(238, 181, 52);
+  color: #fff;
+  border-radius: 11px;
+  position: absolute;
+  top: -70px;
+  right: 368px;
+}
+
+html[data-useragent*='MSIE 9.0'] .infoList .find .title {
+  width: 25%;
+  line-height: 63px;
+  text-align: center;
+  /* font-size: 38px; */
+  float: left;
+}
+
+
+/* 日历和input框 */ 
+
+html[data-useragent*='MSIE 9.0'] .infoList .find .int input {
+  height: 100%;
+  width: 100%;
+  font-size: 24px; 
+  /* margin-top: 3px; */
+  border-radius: 10px;
+  /* margin-top: 100px; */
+  border: none;
+  padding: 0 10px 0 10px;
+  position: relative;
+}
+
+html[data-useragent*='MSIE 9.0'] .easyui-calendar {
+  width: 630px;
+  height: 250px;
+  position: absolute;
+  top: 60px;
+  left: 25%;
+}
+html[data-useragent*='MSIE 9.0'] .page .fenYe{
+  float: left;
+  width:30%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  padding:0 10px 0 10px;
+}
+html[data-useragent*='MSIE 9.0'] .infoList .infoList_b .page .prev,.infoList .infoList_b .page .next{
+  width: 35%;
+  height: 36px;
+  background: rgb(52,117,238);
+  color:#fff;
+  border-radius:7px;
+  border:none;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+  float: left;
+}
+html[data-useragent*='MSIE 9.0'] .infoList .infoList_b .outCard{
+  height:41px;
+  line-height: 41px;
+}
+html[data-useragent*='MSIE 9.0'] .infoList .infoList_c{
+  height:67%;
+}
+
+/*ie 8*/
+html[data-useragent*='MSIE 8.0'] .userInfo .userInfo_c .userInfo_cc div {
+  width: 100%;
+  align-items: center;
+  margin-bottom: 60px;
+}
+html[data-useragent*='MSIE 8.0'] .maskInfo .ms_right .ms_rightC img{
+  
+  margin-top:75px;
+  margin-left:-150px;
+}
+
+html[data-useragent*='MSIE 8.0'] .loadEffect span{
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: relative;
+  padding: 5px;
+  z-index: 2;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  behavior: url('PIE/PIE/PIE.htc');
+}
+html[data-useragent*='MSIE 8.0'] .loadEffect{
+  margin-top:-50px;
+  margin-left:-50px;
+}
+html[data-useragent*='MSIE 8.0'] .maskInfo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -450px;
+  background-image: url('../image/1.jpg');
+  background-attachment: scroll;
+  /*ie 8 背景图设置*/
+  background-repeat: no-repeat;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-color: transparent;
+  z-index: 1000;
+  display: none;
+}
+
+html[data-useragent*='MSIE 8.0'] .maskInfo .ms_right .ms_rightC img {
+  height: 150px;
+  width: 300px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -75px;
+  margin-left: -150px;
+}
+
+html[data-useragent*='MSIE 8.0'] .userInfo {
+  height: 700px;
+  width: 900px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -350px;
+  margin-left: -450px;
+  background: #fff;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+html[data-useragent*='MSIE 8.0'] .userInfo .userInfo_bt button {
+  width: 150px;
+  height: 50px;
+  background: rgb(238, 181, 52);
+  color: #fff;
+  border-radius: 11px;
+  position: absolute;
+  top: -71px;
+  right: 373px;
+}
+html[data-useragent*='MSIE 8.0'] .infoList .find .title{
+  width: 25%;
+  line-height: 63px;
+  text-align: center;
+  font-size: 27px;
+  float:left;
+}
+html[data-useragent*='MSIE 8.0'] .infoList .find .int{
+  height: 100%;
+  width:53%;
+  float: left;
+}
+
+html[data-useragent*='MSIE 8.0'] .infoList .find .btn {
+  width:22%;
+  height: 100%;
+  float:left;
+}
+.container .con_c .con_cc img,.container .con_c .con_qr img  {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -75px;
+  margin-top: -75px;
+}
+html[data-useragent*='MSIE 8.0'] .page .fenYe{
+  float: left;
+  width:30%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  padding:0 10px 0 10px;
+}
+html[data-useragent*='MSIE 8.0'] .infoList .infoList_b .page .prev,.infoList .infoList_b .page .next{
+  width: 35%;
+  height: 36px;
+  background: rgb(52,117,238);
+  color:#fff;
+  border-radius:7px;
+  border:none;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+  float: left;
+  position: relative;
+  behavior: url('PIE/PIE/PIE.htc');
+}
+html[data-useragent*='MSIE 8.0'] .infoList .infoList_b .outCard{
+  height:41px;
+  line-height: 41px;
+  position: relative;
+  behavior: url('PIE/PIE/PIE.htc');
+}
+html[data-useragent*='MSIE 8.0'] .infoList .infoList_c{
+  height:67%;
+}
+
+/* ie7 */
+
+html[data-useragent*='MSIE 7.0'] .el-message-box {
+  display: inline-block;
+  width: 420px;
+  height: 230px;
+  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  font-size: 18px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  text-align: left;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  *position: absolute;
+  *top: 50%;
+  *left: 50%;
+  margin-top: -115px;
+  margin-left: -210px;
+  z-index: 1000;
+}
+
+html[data-useragent*='MSIE 7.0'] .container .con_c .con_cc {
+  height: 370px;
+  width: 350px;
+  background: orange;
+  margin-left: auto;
+  margin-right: auto;
+}

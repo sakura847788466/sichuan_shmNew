@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" http-equiv="Content-Type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+  <meta http-equiv="X-UA-Compatible" content="IE=10" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" type="text/css" href="./css/easyui.css" />
+  <link rel="stylesheet" type="text/css" href="./css/icon.css" />
+  <link rel="stylesheet" type="text/css" href="./css/demo.css" />
+
+
+  <title>自助机打印页面</title>
+</head>
+
+<body>
+  <object id="DS_1870" style="display:none" classid="clsid:55195bc9-49d4-4d76-81b2-e11249f812c0"
+    codebase="./BrowseOcx.CAB"></object>
+  <element style="behavior:url('#default#userData');" id=sID></element>
+  <div class="bg" style="height:100%;width:100%;position:fixed;top:0;left:0;">
+    <img src="./image/beijng.jpg" alt="" style="height:100%;display:inline-block;" />
+  </div>
+  <div class="top"></div>
+  <div class="container">
+    <div class="con_top">
+      <span style="font-size: 40px;color:red;">欢迎使用电子票据自助终端</span>
+    </div>
+    <div class="con_c">
+      <div class="con_cc">
+        <img src="./image/in.png" alt="" />
+        <span>身份证查询</span>
+      </div>
+      <div class="con_qr" onclick="qrCode()">
+        <img src="./image/qrCode.jpg" alt="" />
+        <span>二维码查询</span>
+      </div>
+    </div>
+    <div class="con_t">
+      <div class="con_tL">
+        <span style="display: block;font-size: 26px;color:#fff;">欢迎使用电子发票自助终端</span>
+        <span style="font-size: 26px;color:#fff;">如有疑问，请扫描二维码，进入公众号，我们将为您提供更专业的咨询服务,进入公众号，我们将为您提供更专业的咨询服务</span>
+      </div>
+    </div>
+  </div>
+  <div class="bottom"></div>
+  <!-- 插卡弹出层控件 -->
+  <div class="maskInfo">
+    <img src="./image/1.jpg" alt="" style="position:absolute;top:0;left:0;height:100%;width:100%;display:inline-block;">
+    <div class="ms_right">
+      <div class="cardInfo">请插入您的卡片</div>
+      <div class="ms_rightC">
+        <img src="./image/2.png" alt="请插入您的卡片" />
+      </div>
+      <div class="btn">
+      </div>
+      <div class="box"></div>
+    </div>
+    <!-- 倒计时显示 -->
+    <div class="warp" style="position:absolute;top:30px;right:40px;color:red;font-size:24px;">
+      <span class="a">30</span>
+    </div>
+  </div>
+  <!-- 条码弹出层 -->
+  <div class="maskInfo qrCode">
+    <img src="./image/1.jpg" alt="" style="position:absolute;top:0;left:0;height:100%;width:100%;display:inline-block;">
+    <div class="ms_right">
+      <div class="cardInfo">请出示您的条形码</div>
+      <div class="ms_rightC">
+        <img src="./image/2.png" alt="请插入您的卡片" />
+      </div>
+      <div class="btn">
+      </div>
+      <div class="box"></div>
+    </div>
+    <!-- 倒计时显示 -->
+    <div class="warp" style="position:absolute;top:30px;right:40px;color:red;font-size:24px;">
+      <span class="a">30</span>
+    </div>
+  </div>
+  <!-- 插卡成功用户信息控件 -->
+  <div class="user">
+    <div class="userInfo">
+      <div class="userInfo_top">请确认您磁卡信息</div>
+      <div class="userInfo_c">
+        <div class="userInfo_cc">
+          <div>
+            <span>姓名:</span>
+            <input type="text" class="name" value="" autocomplete="off" />
+          </div>
+          <div>
+            <span>卡号:</span>
+            <input type="text" class="kaHao" value="" autocomplete="off" />
+          </div>
+          <div>
+            <span>性别:</span>
+            <input type="text" class="sex" value="" autocomplete="off" />
+          </div>
+          <div>
+            <span>年龄:</span>
+            <input type="text" class="age" value="" autocomplete="off" />
+          </div>
+          <div>
+            <span>身份证编号:</span>
+            <input type="text" class="idCard" value="" autocomplete="off" />
+          </div>
+        </div>
+      </div>
+      <div class="userInfo_bt">
+        <button class="userIstrue">下一步</button>
+      </div>
+    </div>
+  </div>
+  <!-- 列表信息控件 -->
+  <div class="infoListW">
+    <div class="infoList">
+      <div class="find">
+        <div class="title">查询最近7天票据</div>
+        <div class="int">
+          <input type="text" placeholder="请选择查询日期" value="" class="data" data-endTime='' />
+          <div id="cc" class="easyui-calendar" style="display:none;width:700px;"></div>
+          <!-- 日历插件 -->
+        </div>
+        <div class="btn">
+          <div class="caXun" onclick="find()">查询</div>
+        </div>
+      </div>
+      <div class="infoList_top">
+        <ul>
+          <li>业务流水号</li>
+          <li>开票日期</li>
+          <li>票据号码</li>
+          <li>总金额</li>
+          <li>备注</li>
+          <li style="border:none;">操作</li>
+        </ul>
+      </div>
+      <div class="infoList_c ">
+        <!-- load数据渲染 -->
+      </div>
+
+      <div class="infoList_b">
+        <div class="page">
+          <div class="prev" id="pre_page">上一页</div>
+          <span class="fenYe">
+            <span id="current_page">1</span>
+            <span>/</span>
+            <span id="total_page"></span>
+          </span>
+          <div class="next" id="next_page">下一页</div>
+        </div>
+        <div class="outCard">返回首页</div>
+      </div>
+    </div>
+  </div>
+  <!-- loading -->
+  <div class="loadEffect">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- ip设置提示框 -->
+  <div class="maskT" data-status="false"></div>
+  <div class="el-message-box">
+    <div class="el-message-box__header">
+      <div class="el-message-box__title">
+        <span>提示</span>
+      </div>
+    </div>
+    <div class="el-message-box__content ">
+      <div class="el-message-box__message">
+        <p>请配置IP，格式如：http://58.22.61.222:36771</p>
+      </div>
+      <div class="el-message-box__input">
+        <div class="el-input">
+          <input type="text" autocomplete="off" placeholder="" class="el-input__inner" autocomplete="off">
+        </div>
+        <div class="el-message-box__errormsg" style="visibility: hidden;">
+        </div>
+      </div>
+    </div>
+    <div class="el-message-box__btns">
+      <button type="button" class="el-button el-button--default el-button--small el-button--primary " data-ip="">
+        <span class="ipTrue">
+          确定
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+
+<script src="./module/js/jQuery/jquery-1.11.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="./module/js/jquery.easyui.min.js"></script>
+<script src="./module/js/base64.js"></script>
+<script src="./module/js/MD5.js"></script>
+<script src="./module/js/ApiConfig/ApiConfig.js"></script>
+<script src="./module/js/indexT.js"></script>
+<!-- <script src="./module/js/index.js"></script> -->
+<script src="./module/js/uuid.js"></script>
+<script src="./module/js/gbk.js"></script>
+
+
+<script>
+  $.extend($.messager.defaults, {
+    ok: "确定",
+    cancel: "取消"
+  });
+  if (document.all.DS_1870.object == null) {
+    console.log(document.all.DS_1870.object)
+    alert("您的电脑未注册ock控件，请先安装注册！");
+  } else {
+
+    var htmlObj = document.documentElement;
+    htmlObj.setAttribute('data-useragent', navigator.userAgent);
+    htmlObj.setAttribute('data-platform', navigator.platform);
+    console.log(navigator.userAgent)
+    console.log(navigator.platform)
+  }
+</script>
+
+</html>
